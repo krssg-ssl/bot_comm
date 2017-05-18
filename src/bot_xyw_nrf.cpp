@@ -66,10 +66,10 @@ void vel_convert(const int* vel_xyw, double* vel_wheel)
 
 void CallBack(const krssg_ssl_msgs::gr_Commands::ConstPtr& msg)
 {
-	int vel_xyw[3];
-	vel_xyw[0] = (int)(msg->robot_commands.velnormal * FACTOR_T);
-	vel_xyw[1] = -1*(int)(msg->robot_commands.veltangent * FACTOR_N);
-	vel_xyw[2] =(int)(msg->robot_commands.velangular * FACTOR_W);
+    int vel_xyw[3];
+    vel_xyw[0] = (int)(msg->robot_commands.velnormal * FACTOR_T);
+    vel_xyw[1] = -1*(int)(msg->robot_commands.veltangent * FACTOR_N);
+    vel_xyw[2] =(int)(msg->robot_commands.velangular * FACTOR_W);
 	// printf("%d %d %d %d\n",msg->robot_commands.id, vel_xyw[0], vel_xyw[1], vel_xyw[2]);
     unsigned static char buf[32];
     buf[0] = TEAM_ID;
